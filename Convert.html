@@ -1,52 +1,63 @@
 <!DOCTYPE html>
+
 <head>
     <title>Converter</title>
     <style>
-         .a{
+        .a {
             text-align: center;
-            margin-top: 10%;
+            margin-top: 5%;
         }
-        .label{
-            text-decoration:solid;
+
+        .label {
+            text-decoration: solid;
             font-size: x-large;
         }
-        .input{
+
+        .input {
             size: 20px;
             height: 20px;
             width: 20%;
         }
-        body{
-            background-color: #568bcc;       
+
+        body {
+            background-color: #568bcc;
         }
-        .button{
-            margin-top: 7ch ;
+
+        .button {
+            margin-top: 2ch;
             width: 10%;
-            height: 50px;
+            height: 30px;
             font-size: x-large;
         }
     </style>
-    
+
 </head>
+
 <body>
     <script>
-        function myFunction(){
-            //alert("Hello");
-        var c=document.getElementById("ctemp").value;
-        var f=(c*9/5)+32
-        document.getElementById("fahrenheit").innerHTML=f+"°F";
-    }
+        function CtoF() {
+            var c = document.getElementById("ctemp").value;
+            var f = (c * 9 / 5) + 32
+            document.getElementById("fahrenheit").innerHTML = f + "°F";
+        }
+        function FtoC() {
+            var f = document.getElementById("ftemp").value;
+            var c = (f - 32) * 5 / 9
+            document.getElementById("cel").innerHTML = c + "°C";
+
+        }
     </script>
     <h1 style="text-align:center">Temeprature Converter</h1>
     <div class="a">
         <label class="label">Please enter temperature in Celsius</label>
-            <input type="text" name="ctemp" id="ctemp" class="input" placeholder="°C"><br>
-            <button type="button" onclick="myFunction()" class="button">Convert</button><br>
-        <label id="fahrenheit" class="label"></label>
+        <input type="text" name="ctemp" id="ctemp" class="input" placeholder="°C"><br>
+        <button type="button" onclick="CtoF()" class="button">Convert</button><br>
+        <h3>Temp in fahrenheit:</h3><label id="fahrenheit" class="label"></label><hr>
     </div>
     <div class="a">
-        <label class="label">Please enter temperature in </label>
-            <input type="text" name="ctemp" id="ctemp" class="input" placeholder="°C"><br>
-            <button type="button" onclick="myFunction()" class="button">Convert</button><br>
-        <label id="fahrenheit" class="label"></label>
+        <label class="label">Please enter temperature in Fahrenheit</label>
+        <input type="text" name="ftemp" id="ftemp" class="input" placeholder="°F"><br>
+        <button type="button" onclick="FtoC()" class="button">Convert</button><br>
+        <h3>Temp in Celsius:</h3><label id="cel" class="label"></label>
     </div>
 </body>
